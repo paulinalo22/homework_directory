@@ -7,7 +7,6 @@ import employees from "./employees.json";
 import Container from "./components/Container";
 
 class App extends React.Component {
-  //Setting this.state.employee to the employee json array
   state = {
     employees: [],
     nameSort: "ASC",
@@ -34,7 +33,6 @@ class App extends React.Component {
       var checkName = thisName.name;
       var lowerName = checkName.toLowerCase();
       if (lowerName.startsWith(letter.toLowerCase(), 0)) {
-        // if(thisName.name.startsWith(letter,0)) {
         filteredNames.push(thisName);
         console.log(thisName);
       }
@@ -75,7 +73,6 @@ class App extends React.Component {
     
     var sortOrder = this.state.nameSort;
     var items = this.state.employees;
-    // sort by name
     items.sort(sortOrder === 'ASC' ? this.ascCompare : this.descCompare);
     console.log(items);
     if (sortOrder === 'ASC') {
@@ -94,7 +91,6 @@ class App extends React.Component {
     const value = event.target.value;
     const name = event.target.name;
 
-    // Updating the input's state
     this.setState({
       [name]: value
     });
